@@ -21,7 +21,6 @@ def list_pictures(request):
 
 def index(request):
     events = Event.objects.all().order_by('date').reverse()
-    print(events)
     #todo add photo data
     data = {'events': events}
     return render(request, 'index.html', data)
@@ -29,7 +28,6 @@ def index(request):
 
 def event(request, event_id):
     name = Event.objects.filter(id=event_id)[0]
-    print('aaaaaaaaaaa')
     pictures = Picture.objects.filter(event_id=event_id)
     data = {
         'time': name.description_text,
@@ -40,9 +38,9 @@ def event(request, event_id):
 
 
 def eventqr(request, event_id):
-    print(request.path)
+    # print(request.path.replace("/qr", ''))
     data = {
         "qr": "this is an event qr",
-        "path": request.build_absolute_uri()
+        "path": request.path.replace("/qr", '')
     }
     return render(request, 'event_qr.html', data)

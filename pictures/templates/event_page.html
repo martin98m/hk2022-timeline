@@ -33,12 +33,11 @@
         </div>
     </div>
     <div id="presentation-mode" style="display: none">
-{#        <a>PRESENTATION MODE ON!!</a>#}
         {% for img in pictures %}
             {% if forloop.first %}
-                <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="image_presentation">
+                <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="image_presentation" alt="Image could not be shown">
             {% else %}
-                <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="image_presentation" style="display: none">
+                <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="image_presentation" style="display: none" alt="Image could not be shown">
             {% endif %}
         {% endfor %}
     </div>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/event_qr.css' %}">
 </head>
 <body>
+<a href="{{ path }}">BACK</a>
 <div id="qrcode"></div>
 <script type="text/javascript" >
 new QRCode(document.getElementById("qrcode"), "{{ path }}");
