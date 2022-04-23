@@ -16,8 +16,11 @@
         <div class="photos">photos</div>
         <div class="description">event description</div>
     </div>
-    <div class="grid-foot">
-
+</div>
+<div class="grid-foot">
+    <div id="scroll-left-button">LEFT</div>
+    <div id="scroll-right-button">RIGHT</div>
+    <div class="flex-over" style="scrollL">
         {% for event in events %}
         <div class="event-icon">
              <a href="/event/{{ event.id }}">{{ event.name }}</a>
@@ -26,5 +29,23 @@
     </div>
 </div>
 
+<script>
+    let foot = document.getElementsByClassName("grid-foot")[0];
+    let timer;
+    document.getElementById("scroll-left-button").addEventListener('mousedown', function () {
+        timer = setInterval(function(){
+          foot.scrollLeft -= 2;
+     }, 10);
+    })
+    document.getElementById("scroll-right-button").addEventListener('mousedown', function () {
+        timer = setInterval(function(){
+          foot.scrollLeft += 2;
+     }, 10);
+
+    })
+    document.addEventListener("mouseup", function(){
+        if (timer) clearInterval(timer)
+    });
+</script>
 </body>
 </html>

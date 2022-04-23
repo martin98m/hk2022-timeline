@@ -20,7 +20,7 @@ def list_pictures(request):
 
 
 def index(request):
-    events = Event.objects.all().order_by('date')
+    events = Event.objects.all().order_by('date').reverse()
     print(events)
     data = {'events': events}
     return render(request, 'index.html', data)
@@ -32,7 +32,9 @@ def event(request, event_id):
     pictures = Picture.objects.filter(event_id=event_id)
     data = {
         'time': name.description_text,
-        'pictures': pictures}
+        'pictures': pictures,
+        'event_id': event_id
+    }
     return render(request, 'event_page.html', data)
 
 

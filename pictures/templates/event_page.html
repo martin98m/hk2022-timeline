@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
 <body>
 
 <ul>
+<a href="/event/{{ event_id }}/qr">QR</a>
 {% for img in pictures %}
     <li><img src="/{{ img.image }}" alt="{{ img.description }}" width="200px"></li>
 {% endfor %}
