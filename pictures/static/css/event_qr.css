@@ -7,9 +7,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #qrcode{
     padding: 10px;
     border: 10px solid black;
+}
+
+a{
+    margin-top: 5px;
+    font-size: 20px;
+    padding: 15px;
+    background: grey;
+    border-radius: 25px;
 }

@@ -22,6 +22,7 @@ def list_pictures(request):
 def index(request):
     events = Event.objects.all().order_by('date').reverse()
     print(events)
+    #todo add photo data
     data = {'events': events}
     return render(request, 'index.html', data)
 

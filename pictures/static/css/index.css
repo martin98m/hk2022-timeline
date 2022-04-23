@@ -16,11 +16,32 @@ body{
     grid-template-rows: 1fr 7fr;
 }
 
+.grid-container-pres{
+    width: 100%;
+    /*height: 100%;*/
+
+    display: grid;
+    grid-template-areas: 'head' 'body';
+    grid-template-rows: 1fr 9fr;
+}
+
 .grid-head{
     grid-area: head;
     background: red;
     height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
+
+#presentation_button{
+    overflow-x: hidden;
+    width: 45px;
+    height: 45px;
+    background: green;
+}
+
 
 .grid-body{
     grid-area: body;
@@ -30,6 +51,7 @@ body{
     grid-template-areas: 'photos description';
     grid-template-columns: 3fr 2fr;
 }
+
 
 .photos{
     grid-area: photos;
@@ -91,7 +113,8 @@ body{
     border-radius: 50%;
     border: 8px rgba(171,229,99,0.45) solid;
     z-index: 999;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
   }
+
