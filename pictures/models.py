@@ -10,5 +10,6 @@ class Event(models.Model):
 
 
 class Picture(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.DO_NOTHING)
+    image = models.ImageField(null=True, upload_to='images')
+    event_id = models.ForeignKey(Event, on_delete=models.DO_NOTHING)
     description = models.CharField(max_length=200)

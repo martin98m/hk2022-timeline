@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>qr code</title>
+    <script src="{% static 'js/qrcode.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/event_qr.css' %}">
+</head>
+<body>
+<div id="qrcode"></div>
+<script type="text/javascript" >
+new QRCode(document.getElementById("qrcode"), "{{ path }}");
+</script>
+</body>
+</html>

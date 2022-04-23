@@ -1,11 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
 <body>
-Hello world
-It is now {{ time }}
+
+<div class="grid-container">
+    <div class="grid-head">head</div>
+    <div class="grid-body">body</div>
+    <div class="grid-foot">
+
+        {% for event in events %}
+        <div class="event-icon">{{ event }}</div>
+    {% endfor %}
+    </div>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,43 @@
+body{
+    background: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid-container{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-areas:
+            'head'
+            'body'
+            'foot';
+    grid-template-rows: 10fr 70fr 20fr;
+}
+
+.grid-head{
+    grid-area: head;
+    background: red;
+}
+
+.grid-body{
+    grid-area: body;
+    background: green;
+}
+
+.grid-foot{
+    grid-area: foot;
+    background: blue;
+    display: flex;
+    flex-direction: row;
+}
+
+.event-icon{
+    border: 1px solid black;
+    width: 200px;
+    overflow-x: scroll;
+}
