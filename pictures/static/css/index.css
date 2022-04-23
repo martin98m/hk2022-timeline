@@ -27,17 +27,32 @@ body{
 .grid-body{
     grid-area: body;
     background: green;
+    display: grid;
+    grid-template-areas: 'photos description';
+    grid-template-columns: 3fr 2fr;
 }
+
+.photos{
+    grid-area: photos;
+    background: yellow;
+}
+
+.description{
+    grid-area: description;
+    background: brown;
+}
+
 
 .grid-foot{
     grid-area: foot;
     background: blue;
     display: flex;
     flex-direction: row;
+    overflow-x: auto;
 }
 
 .event-icon{
     border: 1px solid black;
-    width: 200px;
-    overflow-x: scroll;
+    width: 300px;
+    overflow-x: hidden;
 }

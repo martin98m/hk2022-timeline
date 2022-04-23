@@ -9,12 +9,19 @@
 <body>
 
 <div class="grid-container">
-    <div class="grid-head">head</div>
-    <div class="grid-body">body</div>
+    <div class="grid-head">
+        <div class="event-name"></div>
+    </div>
+    <div class="grid-body">
+        <div class="photos">photos</div>
+        <div class="description">event description</div>
+    </div>
     <div class="grid-foot">
 
         {% for event in events %}
-        <div class="event-icon">{{ event }}</div>
+        <div class="event-icon">
+             <a href="/event/{{ event.id }}">{{ event.name }}</a>
+        </div>
     {% endfor %}
     </div>
 </div>
