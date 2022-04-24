@@ -29,9 +29,9 @@
         <div class="photos">
             {% for ev,img in data %}
                 {% if forloop.first %}
-                    <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="index_image_main">
+                    <img id="img_pres_{{ forloop.counter }}" src="/images/{{ img.image }}" class="index_image_main">
                 {% else %}
-                    <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="index_image_main" style="display: none">
+                    <img id="img_pres_{{ forloop.counter }}" src="/images/{{ img.image }}" class="index_image_main" style="display: none">
                 {% endif %}
             {% endfor %}
         </div>
@@ -58,7 +58,7 @@
             <div class="event-icon" onclick="location.href = '/event/{{ event.id }}'">
                 <a class="up">{{ event.name }}</a>
                 <a class="down">{{ event.date|date:"M,Y" }}</a>
-                <img src="/{{ img.image }}" style="height: 20vh">
+                <img src="/images/{{ img.image }}" style="height: 20vh">
             </div>
         {% endfor %}
     </div>

@@ -31,7 +31,7 @@
         {% for img in pictures %}
             <div class="{% if forloop.counter|divisibleby:2 %}image_row_right{% else %}image_row_left{% endif %}">
                 <div class="image_row_image">
-                    <img src="/{{ img.image }}" alt="{{ img.description }}">
+                    <img src="/images/{{ img.image }}" alt="{{ img.description }}">
                 </div>
                 <div class="image_row_description">
                     <a class="description_text">{{ img.description }}</a>
@@ -43,9 +43,9 @@
     <div id="presentation-mode" style="display: none">
         {% for img in pictures %}
             {% if forloop.first %}
-                <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="image_presentation" alt="Image could not be shown">
+                <img id="img_pres_{{ forloop.counter }}" src="/images/{{ img.image }}" class="image_presentation" alt="Image could not be shown">
             {% else %}
-                <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="image_presentation" style="display: none" alt="Image could not be shown">
+                <img id="img_pres_{{ forloop.counter }}" src="/images/{{ img.image }}" class="image_presentation" style="display: none" alt="Image could not be shown">
             {% endif %}
         {% endfor %}
     </div>

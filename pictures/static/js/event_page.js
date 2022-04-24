@@ -27,7 +27,7 @@ function presentationMode(){
             img_counter += 1;
             if (img_counter > images_count)
                 img_counter = 1;
-     }, 1000);
+     }, 2000);
     }else{
         console.log("OFF");
         p_mode_off.style.display = 'block';

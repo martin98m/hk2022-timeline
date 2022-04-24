@@ -2,6 +2,8 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
+    width: 100%;
+    height: 100vh;
 }
 
 #presentation-mode-off{
@@ -84,7 +86,7 @@ img{
 }
 
 .description_text{
-    padding: 30px;
+    padding: 110px;
     font-size: 18px;
     font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
 }
