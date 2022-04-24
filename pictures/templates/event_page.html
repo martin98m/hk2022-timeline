@@ -9,14 +9,22 @@
 <body>
     <div id="presentation-mode-off">
         <div class="header">
-            <div>
-                <a href="/event/{{ event_id }}/qr">QR</a>
+            <div class="header_left">
+                <img src="{% static '/icons/go_back_icon.png' %}" onclick="location.href = '/'" width="50px" height="50px">
+{#                <a href="/">BACK</a>#}
             </div>
-            <div>
-                <a href="/">BACK</a>
+            <div class="header_middle">
+                <a class="header_name">{{ event_name }}</a>
             </div>
-            <div>
-                <a onclick="presentationMode()">PRES</a>
+            <div class="header_right">
+                <div style="margin-right: 10px">
+                    <img src="{% static '/icons/qr_code_icon.png' %}" onclick="location.href = '/event/{{ event_id }}/qr'" width="50px" height="50px">
+{#                    <a href="/event/{{ event_id }}/qr">QR</a>#}
+                </div>
+                <div>
+                    <img src="{% static '/icons/play_pres_icon.png' %}" onclick="presentationMode()" width="50px" height="50px">
+{#                    <a onclick="presentationMode()">PRES</a>#}
+                </div>
             </div>
         </div>
         <div class="body">
@@ -26,7 +34,7 @@
                     <img src="/{{ img.image }}" alt="{{ img.description }}">
                 </div>
                 <div class="image_row_description">
-                    <a>Hello there</a>
+                    <a class="description_text">{{ img.description }}</a>
                 </div>
             </div>
         {% endfor %}

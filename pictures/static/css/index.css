@@ -1,5 +1,5 @@
 body{
-    background: black;
+    background: whitesmoke;
     margin: 0;
     padding: 0;
     border: 0;
@@ -27,25 +27,44 @@ body{
 
 .grid-head{
     grid-area: head;
-    background: red;
+    /*background: red;*/
     height: 10vh;
     width: 100vw;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: 'name pres';
+}
+.event_name{
+    grid-area: name;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event_name>*{
+    font-size: 30px;
+    font-family: "Trebuchet MS";
+}
+
+.head_pres{
+    grid-area: pres;
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
 #presentation_button{
-    overflow-x: hidden;
-    width: 45px;
-    height: 45px;
-    background: green;
+    /*overflow-x: hidden;*/
+    /*width: 45px;*/
+    /*height: 45px;*/
+    /*background: green;*/
+    margin-right: 10px;
 }
 
 
 .grid-body{
     grid-area: body;
-    background: green;
+    /*background: green;*/
     height: 70vh;
     display: grid;
     grid-template-areas: 'photos description';
@@ -55,23 +74,41 @@ body{
 
 .photos{
     grid-area: photos;
-    background: yellow;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index_image_main{
+    max-width: 60vw;
+    max-height: 70vh;
 }
 
 .description{
     grid-area: description;
-    background: brown;
+    /*background: brown;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description_text{
+    padding: 30px;
+    font-size: 18px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
 }
 
 .grid-foot{
     grid-area: foot;
-    background: blue;
+    /*background: blue;*/
     height: 20vh;
     width: auto;
     /*display: flex;*/
     /*float: right;*/
     /*flex-direction: row;*/
     overflow-x: hidden;
+    overflow-y: hidden;
     direction: rtl;
     /*overflow-y: scroll;*/
     /*overflow: scroll;*/
@@ -88,16 +125,45 @@ body{
     border: 1px solid black;
     width: 250px;
     /*height: 50px;*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.event-icon>.up{
+    margin-top: 10px;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    background: grey;
+    padding: 5px 10px;
+
+    /*font-size: large;*/
+
+}
+
+.event-icon>.down{
+    /*margin-top: 120px;*/
+    bottom: 10px;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    background: grey;
+    padding: 5px 10px;
+
+    /*font-size: large;*/
+
 }
 
 #scroll-left-button {
     position: fixed; /* Need a different solution without fixed position */
-    bottom: 10px;
+    bottom: 30px;
     left: 10px;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    border: 8px rgba(171,229,99,0.45) solid;
+    border: 8px black solid;
     z-index: 999;
     display: flex;
     align-items: center;
@@ -106,12 +172,12 @@ body{
 
 #scroll-right-button {
     position: fixed; /* Need a different solution without fixed position */
-    bottom: 10px;
+    bottom: 30px;
     right: 10px;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    border: 8px rgba(171,229,99,0.45) solid;
+    border: 8px black solid;
     z-index: 999;
     display: none;
     align-items: center;

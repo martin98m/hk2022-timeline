@@ -1,7 +1,5 @@
 document.addEventListener('keydown', (event) => {
-  // var name = event.key;
   let code = event.code;
-
   if (code==="KeyP")
     presentationMode();
 }, false);
@@ -34,7 +32,7 @@ function presentationMode(){
         console.log("OFF");
         p_mode_off.style.display = 'block';
         p_mode.style.display = 'none';
-        if (timer) clearInterval(timer)
+        if (timer) clearInterval(timer);
     }
     presentationModeFlag = !presentationModeFlag;
 }

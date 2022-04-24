@@ -1,15 +1,16 @@
+    let speed = 10;
     let foot = document.getElementsByClassName("grid-foot")[0];
     let left = document.getElementById("scroll-left-button");
     let right = document.getElementById("scroll-right-button");
     let timer;
     left.addEventListener('mousedown', function () {
         timer = setInterval(function(){
-          foot.scrollLeft -= 2;
+          foot.scrollLeft -= speed;
      }, 10);
     })
     right.addEventListener('mousedown', function () {
         timer = setInterval(function(){
-          foot.scrollLeft += 2;
+          foot.scrollLeft += speed;
      }, 10);
 
     })
@@ -51,3 +52,26 @@
     }
 
     document.getElementById('presentation_button').addEventListener('click', presentation)
+
+    function showImage(index, previous){
+       document.getElementById('img_pres_'+previous).style.display = 'none';
+       document.getElementById('img_pres_'+index).style.display = 'block';
+       document.getElementById('desc_pres_'+previous).style.display = 'none';
+       document.getElementById('desc_pres_'+index).style.display = 'block';
+       document.getElementById('name_pres_'+previous).style.display = 'none';
+       document.getElementById('name_pres_'+index).style.display = 'block';
+}
+
+let timer_pres;
+let img_counter = 1
+function presentationMode(){
+    timer_pres = setInterval(function(){
+        let prev = img_counter - 1 > 0 ? img_counter - 1 : images_count;
+        showImage(img_counter, prev)
+        img_counter += 1;
+        if (img_counter > images_count)
+            img_counter = 1;
+     }, 1000);
+}
+
+presentationMode();

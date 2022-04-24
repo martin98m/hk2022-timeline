@@ -10,26 +10,65 @@
 
 <div class="grid-container">
     <div class="grid-head">
-        <div class="event-name"></div>
-        <div id="presentation_button">PRESENTATION</div>
+        <div class="event_name">
+            {% for ev,img in datad %}
+                {% if forloop.first %}
+                    <a id="name_pres_{{ forloop.counter }}">{{ ev.name }}</a>
+                {% else %}
+                    <a id="name_pres_{{ forloop.counter }}" style="display: none">{{ ev.name }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="head_pres">
+{#            <div id="presentation_button">#}
+            <img id="presentation_button" src="{% static '/icons/play_pres_icon.png' %}" width="50px" height="50px">
+{#            </div>#}
+        </div>
     </div>
     <div class="grid-body">
-        <div class="photos">photos</div>
-        <div class="description">event description</div>
+        <div class="photos">
+            {% for ev,img in data %}
+                {% if forloop.first %}
+                    <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="index_image_main">
+                {% else %}
+                    <img id="img_pres_{{ forloop.counter }}" src="/{{ img.image }}" class="index_image_main" style="display: none">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="description">
+            {% for ev,img in datac %}
+                {% if forloop.first %}
+                    <a id="desc_pres_{{ forloop.counter }}" class="description_text">{{ ev.description_text }}</a>
+                {% else %}
+                    <a id="desc_pres_{{ forloop.counter }}" style="display: none" class="description_text">{{ ev.description_text }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 <div class="grid-foot">
-    <div id="scroll-left-button">LEFT</div>
-    <div id="scroll-right-button">RIGHT</div>
+    <div id="scroll-left-button">
+        <img src="{% static '/icons/left_icon.png' %}" width="50px" height="50px">
+    </div>
+    <div id="scroll-right-button">
+        <img src="{% static '/icons/left_icon.png' %}" width="50px" height="50px" style="transform:rotate(180deg)">
+    </div>
     <div class="flex-over">
-        {% for event in events %}
-        <div class="event-icon">
-             <a href="/event/{{ event.id }}">{{ event.name }}</a>
-        </div>
-    {% endfor %}
+        {% for event,img in datab %}
+            <div class="event-icon" onclick="location.href = '/event/{{ event.id }}'">
+                <a class="up">{{ event.name }}</a>
+                <a class="down">{{ event.date|date:"M,Y" }}</a>
+                <img src="/{{ img.image }}" style="height: 20vh">
+            </div>
+        {% endfor %}
     </div>
 </div>
 
+<script>
+    let images_count = {{ photo_count }};
+</script>
+
 <script src="{% static 'js/index.js' %}"></script>
+
 </body>
 </html>
