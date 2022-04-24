@@ -18,7 +18,6 @@ let img_counter = 1;
 let timer;
 function presentationMode(){
     if (!presentationModeFlag){
-        console.log("ON");
         p_mode_off.style.display = 'none';
         p_mode.style.display = 'flex';
         timer = setInterval(function(){
@@ -29,7 +28,6 @@ function presentationMode(){
                 img_counter = 1;
      }, 2000);
     }else{
-        console.log("OFF");
         p_mode_off.style.display = 'block';
         p_mode.style.display = 'none';
         if (timer) clearInterval(timer);

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>qr code</title>
+    <title>QR code</title>
     <script src="{% static 'js/qrcode.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/event_qr.css' %}">
 </head>
@@ -16,25 +16,22 @@ new QRCode(document.getElementById("qrcode"), "{{ path }}");
 </script>
 <script>
 
-    function ImagetoPrint(source)
-    {
-        return "<html><head><scri"+"pt>function step1(){\n" +
-                "setTimeout('step2()', 10);}\n" +
-                "function step2(){window.print();window.close()}\n" +
-                "</scri" + "pt></head><body onload='step1()'>\n" +
-                "<img src='" + source + "' /></body></html>";
-    }
+function ImagetoPrint(source){
+    return "<html><head><scri"+"pt>function step1(){\n" +
+            "setTimeout('step2()', 10);}\n" +
+            "function step2(){window.print();window.close()}\n" +
+            "</scri" + "pt></head><body onload='step1()'>\n" +
+            "<img src='" + source + "' /></body></html>";
+}
 
-    function PrintImage()
-    {
-        let source = document.getElementById('qrcode').getElementsByTagName('img')[0].src;
-        let Pagelink = "about:blank";
-        let pwa = window.open(Pagelink, "_new");
-        pwa.document.open();
-        pwa.document.write(ImagetoPrint(source));
-        pwa.document.close();
-    }
-
+function PrintImage(){
+    let source = document.getElementById('qrcode').getElementsByTagName('img')[0].src;
+    let Pagelink = "about:blank";
+    let pwa = window.open(Pagelink, "_new");
+    pwa.document.open();
+    pwa.document.write(ImagetoPrint(source));
+    pwa.document.close();
+}
 </script>
 
 <a href="#" onclick="PrintImage(); return false;">PRINT</a>

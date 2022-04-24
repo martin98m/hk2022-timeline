@@ -3,14 +3,11 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
-    /*width: 100vw;*/
     height: 100vh;
 }
 
 .grid-container{
     width: 100%;
-    /*height: 100%;*/
-
     display: grid;
     grid-template-areas: 'head' 'body';
     grid-template-rows: 1fr 7fr;
@@ -18,8 +15,6 @@ body{
 
 .grid-container-pres{
     width: 100%;
-    /*height: 100%;*/
-
     display: grid;
     grid-template-areas: 'head' 'body';
     grid-template-rows: 1fr 9fr;
@@ -27,7 +22,6 @@ body{
 
 .grid-head{
     grid-area: head;
-    /*background: red;*/
     height: 10vh;
     width: 100vw;
     display: grid;
@@ -54,17 +48,12 @@ body{
 }
 
 #presentation_button{
-    /*overflow-x: hidden;*/
-    /*width: 45px;*/
-    /*height: 45px;*/
-    /*background: green;*/
     margin-right: 10px;
 }
 
 
 .grid-body{
     grid-area: body;
-    /*background: green;*/
     height: 70vh;
     display: grid;
     grid-template-areas: 'photos description';
@@ -87,7 +76,6 @@ body{
 
 .description{
     grid-area: description;
-    /*background: brown;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,17 +89,11 @@ body{
 
 .grid-foot{
     grid-area: foot;
-    /*background: blue;*/
     height: 20vh;
     width: auto;
-    /*display: flex;*/
-    /*float: right;*/
-    /*flex-direction: row;*/
     overflow-x: hidden;
     overflow-y: hidden;
     direction: rtl;
-    /*overflow-y: scroll;*/
-    /*overflow: scroll;*/
 }
 
 .flex-over{
@@ -124,7 +106,6 @@ body{
 .event-icon{
     border: 1px solid black;
     width: 250px;
-    /*height: 50px;*/
     position: relative;
     display: flex;
     justify-content: center;
@@ -138,26 +119,19 @@ body{
     font-size: 18px;
     background: grey;
     padding: 5px 10px;
-
-    /*font-size: large;*/
-
 }
 
 .event-icon>.down{
-    /*margin-top: 120px;*/
     bottom: 10px;
     position: absolute;
     color: black;
     font-size: 18px;
     background: grey;
     padding: 5px 10px;
-
-    /*font-size: large;*/
-
 }
 
 #scroll-left-button {
-    position: fixed; /* Need a different solution without fixed position */
+    position: fixed;
     bottom: 30px;
     left: 10px;
     width: 75px;
@@ -168,10 +142,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 #scroll-right-button {
-    position: fixed; /* Need a different solution without fixed position */
+    position: fixed;
     bottom: 30px;
     right: 10px;
     width: 75px;
@@ -182,5 +156,4 @@ body{
     display: none;
     align-items: center;
     justify-content: center;
-  }
-
+}

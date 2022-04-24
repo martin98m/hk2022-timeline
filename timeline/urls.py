@@ -24,9 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', pictures.views.index),
-    path('events', pictures.views.list_events),
-    path('pictures', pictures.views.list_pictures),
 
     path('event/<str:event_id>', pictures.views.event),
-    path('event/<str:event_id>/qr', pictures.views.eventqr, name='qr'),
+    path('event/<str:event_id>/qr', pictures.views.event_qr, name='qr'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
